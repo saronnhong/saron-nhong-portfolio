@@ -2,12 +2,18 @@ var express = require("express");
 const PORT = process.env.PORT || 3001;
 var app = express();
 const path = require('path');
-
-app.use(express.static("./client/public"));
-
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+app.use(express.static("./client/public"));
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -35,9 +41,8 @@ app.get("/send-email", function(req, res) {
         }
     });
 })
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-  }
+
+
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./build/index.html"));
