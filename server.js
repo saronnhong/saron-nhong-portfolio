@@ -1,11 +1,13 @@
 var express = require("express");
-const PORT = process.env.PORT || 3001;
+require('dotenv').config();
+
 var app = express();
 const path = require('path');
 const nodemailer = require('nodemailer');
-require('dotenv').config();
 
-app.use(express.static("./client/public"));
+const PORT = process.env.PORT || 3001;
+
+// app.use(express.static("./client/public"));
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
