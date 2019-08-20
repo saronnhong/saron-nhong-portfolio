@@ -1,6 +1,6 @@
 {
   "name": "react-portfolio",
-  "homepage": "https://saronnhong.github.io/react-portfolio",
+  "homepage": "https://saron-nhong-portfolio.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
@@ -42,11 +42,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saronnhong/react-portfolio.git"
+    "url": "git+https://github.com/saronnhong/saron-nhong-portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saronnhong/react-portfolio/issues"
+    "url": "https://github.com/saronnhong/saron-nhong-portfolio/issues"
   }
 }
